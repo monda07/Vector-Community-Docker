@@ -1,0 +1,16 @@
+version: '3'
+# Special testing Vector container.  No data volumes are exposed for
+# simplicity however ssh port 22 is available for EMA testing
+
+services:
+  vector:
+    environment:
+      - IMAGEOWNER
+    image: "${IMAGEOWNER:-actian}/vectortest"
+    build: . 
+    container_name: vector
+    restart: "no"
+    ports:
+      - "2222:22"
+      - 27832:27832
+      - 27839:27839
