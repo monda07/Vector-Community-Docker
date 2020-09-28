@@ -1,10 +1,9 @@
 # Rules to make things ....
 
-IMAGEOWNER?=actian
 CONTAINER?=docker
 
 build:
-	$(CONTAINER) build --tag $(IMAGEOWNER)/vectortest .
+	$(CONTAINER) build --tag actian/vectortest .
 
 run:
 	$(CONTAINER)-compose up
