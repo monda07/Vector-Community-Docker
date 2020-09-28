@@ -4,9 +4,7 @@ version: '3'
 
 services:
   vector:
-    environment:
-      - IMAGEOWNER
-    image: "${IMAGEOWNER:-actian}/vectortest"
+    image: actian/vectortest
     build: . 
     container_name: vector
     restart: "no"
