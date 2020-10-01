@@ -12,3 +12,12 @@ services:
       - "2222:22"
       - 27832:27832
       - 27839:27839
+    secrets:
+       - source: vector_test_docker_id_rsa_pub
+         target: id_rsa_pub
+
+secrets:
+  vector_test_docker_id_rsa:
+     file: $PWD/id_rsa
+  vector_test_docker_id_rsa_pub:
+     file: $PWD/id_rsa.pub
