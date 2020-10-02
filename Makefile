@@ -3,9 +3,13 @@
 CONTAINER?=docker
 IMAGE_NAME=actian/vectortest
 VERSION?=latest
+BUILD_ARGS=$(BUILD)
+ifeq ($(TERM),dumb)
+BUILD_ARGS:=$(BUILD_ARGS) --progress=plain
+endif
 
 build:
-	$(CONTAINER) build --tag $(IMAGE_NAME) .
+	$(CONTAINER) build $(BUILD_ARGS) --tag $(IMAGE_NAME) .
 
 run:
 	$(CONTAINER)-compose up
